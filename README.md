@@ -43,7 +43,3 @@ A API ficará disponível em `http://localhost:5050`. A coleção de testes est�
   "descricao": "Armazena eletricidade nas bolsas das bochechas."
 }
 ```
-
-## Entrega complementar
-
-Ainda é necessário publicar este projeto em um repositório GitHub público e gravar/enviar o vídeo de demonstração solicitado na atividade.
