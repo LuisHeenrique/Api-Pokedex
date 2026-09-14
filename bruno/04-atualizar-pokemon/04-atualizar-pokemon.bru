@@ -1,0 +1,24 @@
+meta {
+  name: 04 - Atualizar Pokémon
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/pokemon/3
+  body: json
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "nome": "Pikachu",
+    "tipoPrimario": "Elétrico",
+    "tipoSecundario": null,
+    "pontosDeVida": 40,
+    "descricao": "Pokémon elétrico com energia armazenada nas bochechas."
+  }
+}
