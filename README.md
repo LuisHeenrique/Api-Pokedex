@@ -43,3 +43,7 @@ A API ficará disponível em `http://localhost:5050`. A coleção de testes est�
   "descricao": "Um Pokémon que detecta e manipula energia Aura."
 }
 ```
+
+## Vídeo de demonstração
+
+[Assistir ao vídeo de demonstração] https://drive.google.com/file/d/1Oou6zfs4sM16GXrvAzkyXT-cFJP0BDbF/view?usp=sharing
