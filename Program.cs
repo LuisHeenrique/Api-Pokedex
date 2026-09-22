@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+var builder = WebApplication.CreateBuilder(args);builder.Services.AddDbContext<ApiDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
+
+
 
 var pokemons = new List<Pokemon>
 {
@@ -96,3 +100,21 @@ record PokemonInputDto(
     string? TipoSecundario,
     int PontosDeVida,
     string Descricao);
+
+// Entidade do banco de dados
+public class PokemonEntity
+{
+    public int Id { get; set; }
+    public string Nome { get; set; } = string.Empty;
+    public string Tipo { get; set; } = string.Empty;
+}
+
+// DbContext do EF Core
+public class ApiDbContext : DbContext
+{
+    public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
+    {
+    }
+
+    public DbSet<PokemonEntity> Pokemons => Set<PokemonEntity>();
+}

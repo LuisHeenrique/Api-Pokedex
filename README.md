@@ -35,11 +35,11 @@ A API ficará disponível em `http://localhost:5050`. A coleção de testes est�
 ## Exemplo de JSON para criação/atualização
 
 ```json
-{
-  "nome": "Pikachu",
-  "tipoPrimario": "Elétrico",
-  "tipoSecundario": null,
-  "pontosDeVida": 35,
-  "descricao": "Armazena eletricidade nas bolsas das bochechas."
+  {
+  "nome": "Lucario",
+  "tipoPrimario": "Lutador",
+  "tipoSecundario": "Aço",
+  "pontosDeVida": 70,
+  "descricao": "Um Pokémon que detecta e manipula energia Aura."
 }
 ```
