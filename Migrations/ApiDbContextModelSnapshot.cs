@@ -15,23 +15,132 @@ namespace PokedexApi.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");
 
-            modelBuilder.Entity("PokemonEntity", b =>
+            modelBuilder.Entity("Pokemon", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Tipo")
+                    b.Property<int>("PontosDeVida")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TipoPrimario")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoSecundario")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Pokemons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "Um Pokémon semente que carrega uma planta nas costas.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+                            Nome = "Bulbasaur",
+                            PontosDeVida = 45,
+                            TipoPrimario = "Planta",
+                            TipoSecundario = "Veneno"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "A chama de sua cauda indica seu estado de saúde.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+                            Nome = "Charmander",
+                            PontosDeVida = 39,
+                            TipoPrimario = "Fogo"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descricao = "Um Pokémon tartaruga que dispara água de sua boca.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+                            Nome = "Squirtle",
+                            PontosDeVida = 44,
+                            TipoPrimario = "Água"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Descricao = "Um Pokémon elétrico que armazena energia em suas bochechas.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+                            Nome = "Pikachu",
+                            PontosDeVida = 35,
+                            TipoPrimario = "Elétrico"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Descricao = "Um Pokémon fofinho que adormece os oponentes com sua canção.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+                            Nome = "Jigglypuff",
+                            PontosDeVida = 115,
+                            TipoPrimario = "Normal",
+                            TipoSecundario = "Fada"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Descricao = "Um Pokémon fantasma que se esconde nas sombras e assusta os inimigos.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+                            Nome = "Gengar",
+                            PontosDeVida = 60,
+                            TipoPrimario = "Fantasma",
+                            TipoSecundario = "Veneno"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descricao = "Um Pokémon versátil que pode evoluir para diferentes formas.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+                            Nome = "Eevee",
+                            PontosDeVida = 55,
+                            TipoPrimario = "Normal"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Descricao = "Um Pokémon preguiçoso que passa a maior parte do tempo dormindo.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+                            Nome = "Snorlax",
+                            PontosDeVida = 160,
+                            TipoPrimario = "Normal"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Descricao = "Um Pokémon lendário criado a partir do DNA de Mew.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+                            Nome = "Mewtwo",
+                            PontosDeVida = 106,
+                            TipoPrimario = "Psíquico"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Descricao = "Um Pokémon feroz que evolui de Magikarp e causa destruição com sua força.",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+                            Nome = "Gyarados",
+                            PontosDeVida = 95,
+                            TipoPrimario = "Água",
+                            TipoSecundario = "Voador"
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex API - Frontend Integrado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <span class="pokeball-icon" aria-hidden="true">⚪</span>
+                <h1>Pokédex API</h1>
+            </div>
+            <div class="demo-badge" role="status">
+                <span class="badge-dot" aria-hidden="true"></span>
+                <strong>Conectado à API</strong> (Persistência SQLite com Entity Framework Core)
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Área de mensagens de feedback acessível -->
+        <div id="feedback-container" class="feedback-container" aria-live="polite" role="status">
+            <div id="feedback-message" class="feedback-message info">
+                <span>Pokédex conectada à API com persistência em banco de dados SQLite.</span>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Painel do Formulário (Adicionar / Visualizar / Editar) -->
+            <section class="panel form-panel" aria-labelledby="form-heading">
+                <div class="panel-header">
+                    <h2 id="form-heading">Adicionar Pokémon</h2>
+                    <p id="form-subheading" class="panel-description">Preencha os campos para cadastrar um novo Pokémon no banco de dados.</p>
+                </div>
+
+                <form id="pokemon-form" novalidate>
+                    <input type="hidden" id="pokemon-id" name="id">
+
+                    <!-- Exibição de ID (visível apenas em modo de visualização/edição) -->
+                    <div class="form-group" id="group-id-display" style="display: none;">
+                        <label for="pokemon-id-display">ID do Pokémon:</label>
+                        <input type="text" id="pokemon-id-display" readonly class="input-readonly">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pokemon-nome">Nome do Pokémon <span class="required">*</span></label>
+                        <input type="text" id="pokemon-nome" name="nome" placeholder="Ex.: Charmander" required maxlength="50" autocomplete="off">
+                        <span class="field-error" id="error-nome"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pokemon-tipo-primario">Tipo Primário <span class="required">*</span></label>
+                            <select id="pokemon-tipo-primario" name="tipoPrimario" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="Aço">Aço</option>
+                                <option value="Água">Água</option>
+                                <option value="Dragão">Dragão</option>
+                                <option value="Elétrico">Elétrico</option>
+                                <option value="Fada">Fada</option>
+                                <option value="Fantasma">Fantasma</option>
+                                <option value="Fogo">Fogo</option>
+                                <option value="Gelo">Gelo</option>
+                                <option value="Inseto">Inseto</option>
+                                <option value="Lutador">Lutador</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Planta">Planta</option>
+                                <option value="Psíquico">Psíquico</option>
+                                <option value="Pedra">Pedra</option>
+                                <option value="Terra">Terra</option>
+                                <option value="Veneno">Veneno</option>
+                                <option value="Voador">Voador</option>
+                            </select>
+                            <span class="field-error" id="error-tipo-primario"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pokemon-tipo-secundario">Tipo Secundário (Opcional)</label>
+                            <select id="pokemon-tipo-secundario" name="tipoSecundario">
+                                <option value="">Nenhum</option>
+                                <option value="Aço">Aço</option>
+                                <option value="Água">Água</option>
+                                <option value="Dragão">Dragão</option>
+                                <option value="Elétrico">Elétrico</option>
+                                <option value="Fada">Fada</option>
+                                <option value="Fantasma">Fantasma</option>
+                                <option value="Fogo">Fogo</option>
+                                <option value="Gelo">Gelo</option>
+                                <option value="Inseto">Inseto</option>
+                                <option value="Lutador">Lutador</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Planta">Planta</option>
+                                <option value="Psíquico">Psíquico</option>
+                                <option value="Pedra">Pedra</option>
+                                <option value="Terra">Terra</option>
+                                <option value="Veneno">Veneno</option>
+                                <option value="Voador">Voador</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pokemon-hp">Pontos de Vida (HP) <span class="required">*</span></label>
+                        <input type="number" id="pokemon-hp" name="pontosDeVida" placeholder="Ex.: 45" min="1" max="999" required>
+                        <span class="field-error" id="error-hp"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pokemon-imagem">URL da Foto / Imagem (Opcional)</label>
+                        <input type="url" id="pokemon-imagem" name="imagemUrl" placeholder="Ex.: https://... (Vazio usará a PokéAPI oficial)" autocomplete="off">
+                        <span class="field-hint">Se deixar vazio, o sistema buscará a arte oficial da PokéAPI pelo ID.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pokemon-descricao">Descrição <span class="required">*</span></label>
+                        <textarea id="pokemon-descricao" name="descricao" rows="3" placeholder="Descrição das características do Pokémon..." required maxlength="300"></textarea>
+                        <span class="field-error" id="error-descricao"></span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="btn-submit" class="btn btn-primary">Adicionar Pokémon</button>
+                        <button type="button" id="btn-cancel" class="btn btn-secondary">Limpar / Novo</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Painel da Lista de Pokémons -->
+            <section class="panel list-panel" aria-labelledby="list-heading">
+                <div class="panel-header list-header">
+                    <div>
+                        <h2 id="list-heading">Pokémons Registrados</h2>
+                        <p class="panel-description">Total persistido: <strong id="total-count">0</strong></p>
+                    </div>
+                    
+                    <div class="search-wrapper">
+                        <label for="filter-input" class="search-label">Filtrar lista:</label>
+                        <input type="search" id="filter-input" placeholder="Buscar por nome ou tipo..." autocomplete="off">
+                    </div>
+                </div>
+
+                <div id="pokemon-list" class="pokemon-grid" role="region" aria-label="Lista de Pokémons">
+                    <!-- Cards inseridos dinamicamente pelo app.js a partir da API -->
+                </div>
+
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <p>Nenhum Pokémon encontrado.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>Pokédex API — Interface integrada com persistência SQLite e Entity Framework Core.</p>
+        <p class="disclaimer">Aviso: Imagens fornecidas via repositório público da PokéAPI.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
