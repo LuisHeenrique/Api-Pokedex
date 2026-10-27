@@ -61,7 +61,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 2,
                             Descricao = "A chama de sua cauda indica seu estado de saúde.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
                             Nome = "Charmander",
                             PontosDeVida = 39,
                             TipoPrimario = "Fogo"
@@ -70,7 +70,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 3,
                             Descricao = "Um Pokémon tartaruga que dispara água de sua boca.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
                             Nome = "Squirtle",
                             PontosDeVida = 44,
                             TipoPrimario = "Água"
@@ -79,7 +79,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 4,
                             Descricao = "Um Pokémon elétrico que armazena energia em suas bochechas.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
                             Nome = "Pikachu",
                             PontosDeVida = 35,
                             TipoPrimario = "Elétrico"
@@ -88,7 +88,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 5,
                             Descricao = "Um Pokémon fofinho que adormece os oponentes com sua canção.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
                             Nome = "Jigglypuff",
                             PontosDeVida = 115,
                             TipoPrimario = "Normal",
@@ -98,7 +98,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 6,
                             Descricao = "Um Pokémon fantasma que se esconde nas sombras e assusta os inimigos.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
                             Nome = "Gengar",
                             PontosDeVida = 60,
                             TipoPrimario = "Fantasma",
@@ -108,7 +108,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 7,
                             Descricao = "Um Pokémon versátil que pode evoluir para diferentes formas.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
                             Nome = "Eevee",
                             PontosDeVida = 55,
                             TipoPrimario = "Normal"
@@ -117,7 +117,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 8,
                             Descricao = "Um Pokémon preguiçoso que passa a maior parte do tempo dormindo.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
                             Nome = "Snorlax",
                             PontosDeVida = 160,
                             TipoPrimario = "Normal"
@@ -126,7 +126,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 9,
                             Descricao = "Um Pokémon lendário criado a partir do DNA de Mew.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
                             Nome = "Mewtwo",
                             PontosDeVida = 106,
                             TipoPrimario = "Psíquico"
@@ -135,7 +135,7 @@ namespace PokedexApi.Migrations
                         {
                             Id = 10,
                             Descricao = "Um Pokémon feroz que evolui de Magikarp e causa destruição com sua força.",
-                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+                            ImagemUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
                             Nome = "Gyarados",
                             PontosDeVida = 95,
                             TipoPrimario = "Água",
