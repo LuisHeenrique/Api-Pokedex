@@ -86,7 +86,7 @@ O frontend é servido diretamente pela API a partir da pasta `wwwroot` (arquivos
   "tipoSecundario": "Aço",
   "pontosDeVida": 70,
   "descricao": "Um Pokémon que detecta e manipula energia Aura.",
-  "imagemUrl": null
+  "imagemUrl": https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png?utm_source=chatgpt.com
 }
 ```
 
@@ -152,7 +152,7 @@ PokedexApi/
 
 ## Vídeo de demonstração — AP2
 
-> 🎬 **[Inserir link público do vídeo aqui]**
+> 🎬 **[https://youtu.be/RWMZAmVj7KA]**
 
 O vídeo demonstra:
 - Apresentação do tema e organização do projeto (backend, frontend, collection)
